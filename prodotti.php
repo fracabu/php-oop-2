@@ -20,7 +20,7 @@ class Prodotto
 
 
 //  funzione per verificare disponibiltà prodotto
-    public function disponibilita($_quantita)
+    public function prodottoDisponibile($_quantita)
     {
         if ($this->quantita <= 0) {
             return 'Non Disponibile';
@@ -29,4 +29,6 @@ class Prodotto
         }
     }
 }
+
+var_dump()
 ?>

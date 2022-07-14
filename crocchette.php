@@ -26,5 +26,7 @@ class Crocchette extends Prodotto
     
 }
 
+var_dump($Prodotti);
+
 
 ?>
