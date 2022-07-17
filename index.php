@@ -1,12 +1,19 @@
 <?php
 // collego il file Customer
+
 require_once "classi/Customer.php";
 require_once "classi/Alimentari.php";
 require_once "classi/Giochi.php";
+require_once "classi/CreditCard.php";
+
 //creo l'istanza del mio utente che attualmente non è registrato infatti registered restituisce false
 $customer = new Customer ();
+
 //utilizzo la funzione creata per la registrazione dell'utente
 $customer->register("Mario", "Rossi");
+
+//istanza del metodo di pagamento               TYPE            NUMBER       CVV    SCADENZA                                          
+$customer->paymentHandler->add(new CreditCard("mastercard", "5674839929929", "666", "12/22"));
 
 //creo un array di istanze per i prodotti
 
@@ -17,8 +24,9 @@ $products = [
     new Giochi (3.10, "palla","gomma","giallo"),
 ];
 //aggiungo il prodotto al carrello
+
 $customer->cart->add($products[1]);
 $customer->cart->add($products[3]);
 
 
-var_dump($customer);
+var_dump($customer->paymentHandler);

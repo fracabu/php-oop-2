@@ -12,7 +12,7 @@ function __construct($_price,$_title)
 {
     $this->setPrice($_price);
     $this->setTitle($_title);
-    $this->sid = uniqid();
+    $this->id = uniqid();
 }
 
 /**

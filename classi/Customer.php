@@ -1,7 +1,8 @@
 <?php
 
-//includo il carrello nel Customer
+//includo il carrello e i metodi di pagamento nel Customer
 require_once __DIR__ . "/Cart.php";
+require_once __DIR__ . "/PaymentHandler.php";
 
 
 class Customer
@@ -9,8 +10,10 @@ class Customer
     private $registered = false;
     private $firstName;
     private $lastName;
-    //creo la classe Cart nel Customer che poi vado ad inizializzare nel Costruttore
+    //creo la variabile Cart nel Customer che poi vado ad inizializzare nel Costruttore
     public Cart $cart;
+    //creo la variabile PaymentHandler nel Customer che poi vado ad inizializzare nel Costruttore
+    public PaymentHandler $paymentHandler;
 
 
     //creo costruttore con valore null perchè se mi passa nome e cognome l'utente
@@ -20,6 +23,8 @@ class Customer
     {
         //inizializzo la classe Cart nel costruttore
         $this->cart = new Cart();
+        //inizializzo la classe paymentMethods nel costruttore
+        $this->paymentHandler = new PaymentHandler();
 
         //se ho nome e cognome vuol dire che l'utente è registrato
 
