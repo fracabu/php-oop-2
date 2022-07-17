@@ -101,4 +101,19 @@ class Customer
 
         return $this;
     }
+
+    //funzione per effettuare il pagamento
+    public function checkout(){
+        //recupera il totale del carrello
+        $total = $this->cart->getTotal();
+
+        //controlla se deve applicare uno sconto
+        $discount = $this->registered ? 20 : 0;
+        $totalWhitDiscount = $total - ($total * $discount / 100);
+
+        //controlla che la carta non sia scaduta
+
+        //conclude il pagamento
+
+    }
 }

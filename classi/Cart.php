@@ -19,7 +19,12 @@ class Cart
     }
     // funzione per ottenere il totale con eventuale sconto del 20% se l'utente è registrato
     public function getTotal($discount = 0){
+        $total = 0;
+        foreach ($this->products as $product){
+            $total += $product->getPrice();
+        }
 
+        return $total;
     }
 
     // funzione per ottenere l'elenco dei prodotti contenuti nel carrello

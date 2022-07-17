@@ -29,4 +29,4 @@ $customer->cart->add($products[1]);
 $customer->cart->add($products[3]);
 
 
-var_dump($customer->paymentHandler);
+var_dump($customer);
