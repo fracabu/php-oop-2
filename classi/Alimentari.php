@@ -13,6 +13,10 @@ class Alimentari extends Product
     {
         // invoco il padre
         parent::__construct($_price, $_title);
+
+        $this->setScadenza($_scadenza);
+        $this->setIngredienti($_ingredienti);
+
     }
 
     /**

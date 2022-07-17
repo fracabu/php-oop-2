@@ -6,6 +6,16 @@ class Giochi extends Product
     private $materiale;
     private $colore;
 
+    function __construct($_price,$_title,$_materiale,$_colore)
+    {
+        // invoco il padre
+        parent::__construct($_price, $_title);
+
+        $this->setMateriale($_materiale);
+        $this->setColore($_colore);
+
+    }
+
     /**
      * Get the value of materiale
      */ 

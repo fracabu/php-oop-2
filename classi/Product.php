@@ -5,11 +5,14 @@ class Product
     //aggiungo gli attributi comuni a tutti i prodotti (prezzo e titolo)
 private float $price;
 private string $title;
+//creo id per poter rimuovere i prodotti dal carrello
+private string $id;
 // prezzo e titolo sono obbligatori
 function __construct($_price,$_title)
 {
     $this->setPrice($_price);
     $this->setTitle($_title);
+    $this->sid = uniqid();
 }
 
 /**
@@ -48,6 +51,26 @@ return $this->title;
 public function setTitle($title)
 {
 $this->title = $title;
+
+return $this;
+}
+
+/**
+ * Get the value of id
+ */ 
+public function getId()
+{
+return $this->id;
+}
+
+/**
+ * Set the value of id
+ *
+ * @return  self
+ */ 
+public function setId($id)
+{
+$this->id = $id;
 
 return $this;
 }
